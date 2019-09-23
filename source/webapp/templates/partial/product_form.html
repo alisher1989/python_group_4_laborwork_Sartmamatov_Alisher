@@ -1,0 +1,30 @@
+{% load  widget_tweaks %}
+{% csrf_token %}
+
+
+{% for error in form.not_field_errors %}
+<p class="form-error">{{ error }}</p>
+{% endfor %}
+
+<p><label for="{{ form.author.id_for_label }}">Author *</label></p>
+<p>{{ form.author|add_class:"form-control" }}</p>
+{% for error in form.author.errors %}
+    <p class="form-error">{{ errors }}</p>
+{% endfor %}
+
+<p><label for="{{ form.email.id_for_label }}">Email *</label></p>
+<p>{{ form.email|add_class:"form-control" }}</p>
+{% for error in form.email.errors %}
+    <p class="form-error">{{ errors }}</p>
+{% endfor %}
+
+
+<p><label for="{{ form.text.id_for_label }}">Text *</label></p>
+<p>{{ form.text|add_class:"form-control" }}</p>
+{% for error in form.text.errors %}
+    <p class="form-error">{{ errors }}</p>
+{% endfor %}
+
+
+
+<p class="text-center"><input type="submit" value="Confirm" class="btn btn-primary"></p>

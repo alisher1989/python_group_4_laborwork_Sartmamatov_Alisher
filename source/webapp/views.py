@@ -19,3 +19,21 @@ def product_view(request, pk):
     return render(request, 'product.html', context={
         'product': product
     })
+
+def product_add_view(request, *args, **kwargs):
+    if request.method == 'GET':
+        form = ProductForm()
+        return render(request, 'add.html', context={'form': form})
+    elif request.method == 'POST':
+        form = ProductForm(data=request.POST)
+        if form.is_valid():
+            product = Product.objects.create(
+                name=form.cleaned_data['name'],
+                description=form.cleaned_data['author'],
+                category=form.cleaned_data['category'],
+                amount=form.cleaned_data['amount'],
+                price=form.cleaned_data['price'],
+            )
+            return redirect('product_view', pk=product.pk)
+        else:
+            return render(request, 'add.html', context={'form': form})
