@@ -1,0 +1,75 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "Ball",
+    "description": "Football playing ball - Nike",
+    "category": "sport",
+    "amount": 50,
+    "price": "1200.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "Hamburger",
+    "description": "The best is MacDonald's",
+    "category": "food",
+    "amount": 15,
+    "price": "100.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "Coca-Cola",
+    "description": "The best drink in opinion of amerikans",
+    "category": "drink",
+    "amount": 0,
+    "price": "1200.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "Adidas",
+    "description": "Best sport shoes in opinion of some sportsmen\r\nAnd in my opinion too ))",
+    "category": "shoes",
+    "amount": 100,
+    "price": "5000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "Puma",
+    "description": "Puma jackets is the best for someone",
+    "category": "cloth",
+    "amount": 30,
+    "price": "200.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$vOq4OAj3DzTS$GgSu6D7yLOe0r4VzF9yXzNFTH0sQS+OZrrpg3i2X4rk=",
+    "last_login": "2019-09-23T08:08:19.047Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-23T07:36:50.927Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

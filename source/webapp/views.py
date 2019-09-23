@@ -6,9 +6,9 @@ from webapp.models import Product
 def index_view(request, *args, **kwargs):
     search_query = request.GET.get('search', '')
     if search_query:
-        products = Product.objects.filter(title__icontains=search_query)
+        products = Product.objects.filter(name__icontains=search_query)
     else:
-        products = Product.objects.all().order_by('name', 'category').filter(amount='1')
+        products = Product.objects.all().order_by('name', 'category').filter(amount__gt=1)
     return render(request, 'index.html', context={
         'products': products
     })
@@ -29,7 +29,7 @@ def product_add_view(request, *args, **kwargs):
         if form.is_valid():
             product = Product.objects.create(
                 name=form.cleaned_data['name'],
-                description=form.cleaned_data['author'],
+                description=form.cleaned_data['description'],
                 category=form.cleaned_data['category'],
                 amount=form.cleaned_data['amount'],
                 price=form.cleaned_data['price'],
@@ -59,7 +59,7 @@ def product_edit_view(request, pk):
             product.amount = form.cleaned_data['amount']
             product.price = form.cleaned_data['price']
             product.save()
-            return redirect('article_view', pk=product.pk)
+            return redirect('product_view', pk=product.pk)
         else:
             return render(request, 'edit.html', context={'form': form, 'product': product})
 
