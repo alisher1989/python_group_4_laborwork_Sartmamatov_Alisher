@@ -15,8 +15,8 @@ class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name='name')
     description = models.TextField(max_length=2000, verbose_name='description', null=True, blank=True)
     category = models.CharField(max_length=20, verbose_name='category', choices=PRODUCT_CATEGORY_CHOICES, default=PRODUCT_OTHER_CHOICE)
-    amount = models.PositiveIntegerField(verbose_name='amount')
-    price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='price')
+    amount = models.PositiveIntegerField(verbose_name='amount', null=False, blank=False)
+    price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='price', null=False, blank=False)
 
 
     def __str__(self):

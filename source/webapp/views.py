@@ -8,7 +8,7 @@ def index_view(request, *args, **kwargs):
     if search_query:
         products = Product.objects.filter(title__icontains=search_query)
     else:
-        products = Product.objects.all()
+        products = Product.objects.all().order_by('name', 'category').filter(amount='1')
     return render(request, 'index.html', context={
         'products': products
     })

@@ -14,13 +14,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-text card-link">
-                            {{ product.name }}
+                            <a href="{% url 'product_view' product.pk %}">{{ product.name }}</i></a>
                         </h2>
                         <a href="{% url 'edit_product' product.pk %}"><i class="fas fa-edit"></i></a>
                         <a href="{% url 'delete_product' product.pk %}"><i class="fas fa-trash"></i></a>
-                        <p class="card-text">{{ product.get_category_display }}</p>
+                        <p class="card-text">Category: {{ product.get_category_display }}</p>
                         <p class="card-text text-right">{{ product.price }}</p>
-                        <p class="card-text text-right">{{ product.description }}</p>
                     </div>
                 </div>
             </div>

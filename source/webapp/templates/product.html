@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block content%}
-    <h1>{{ product.name }}</h1>
+    <h1>Name: {{ product.name }}</h1>
     <p>Category: {{ product.get_category_display }}</p>
-    <p><b>{{ product.amount }}</b><b>{{ product.price }}</b></p>
-    <div class="pre">{{ product.description }}</div>
+    <p><b>Amount: {{ product.amount }}</b></p>
+    <p><b>Price: {{ product.price }}</b></p>
+    <div class="pre">Description: {{ product.description }}</div>
 {% endblock %}
